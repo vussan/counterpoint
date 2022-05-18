@@ -14,7 +14,7 @@ namespace Repository.Persistence.Repositories
 
         public async Task<TEntity> Get(Expression<Func<TEntity, bool>> predicate, bool trackChanges = true)
         {
-            return await _context.Set<TEntity>().FirstAsync(predicate);
+            return await _context.Set<TEntity>().FirstOrDefaultAsync(predicate);
         }
 
         public async Task<IEnumerable<TEntity>> GetAll(bool trackChanges = true)
