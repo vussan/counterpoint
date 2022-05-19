@@ -1,6 +1,6 @@
 ﻿@model CounterPoint.ViewModels.LoginViewModel
 
-<h1>Login</h1>
+@*<h1>Login</h1>
 <form asp-controller="Account" asp-action="Login" 
 method="post">
     <table>
@@ -12,10 +12,7 @@ method="post">
             <td><label asp-for="Password"></label></td>
             <td><input asp-for="Password" type="password" /></td>
         </tr>
-        @*<tr>
-            <td><label asp-for="RememberMe"></label></td>
-            <td><input asp-for="RememberMe" /></td>
-        </tr>*@
+
         <tr>
             <td colspan="2">
                 <input type="submit"
@@ -31,4 +28,39 @@ method="post">
     <h3><a asp-controller="Account" asp-action="Register">
 Create a user</a></h3>
 
+</form>*@
+
+<form method="post" asp-controller="Account" asp-action="Login">
+    <div class="row justify-content-center">
+        <div class="col-sm-4">
+            <div class="card">
+                <article class="card-body">
+                    <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            <input asp-for="Username" class="form-control" placeholder="Email or login" type="text">
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input asp-for="Password" class="form-control" placeholder="******" type="password">
+                        </div> 
+                    </div> 
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+                    </div> 
+                    <div class="form-group">
+                        <div>@ViewData["message"]</div>
+                    </div>
+                    <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+                </article>
+            </div>
+        </div>
+    </div>
 </form>

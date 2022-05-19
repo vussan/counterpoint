@@ -1,0 +1,29 @@
+﻿@using DevExtreme.AspNet.Mvc
+@using Repository.Core.Models
+@model IEnumerable<WebEmt>
+
+@(Html.DevExtreme().DataGrid<WebEmt>()
+    .ID("gridContainer")
+    .ShowBorders(true)
+    .DataSource(d => d
+        .Mvc()
+        .Controller("Profile")
+        .Key("Code")
+        .LoadAction("Get")
+        .UpdateAction("Update")
+        .DeleteAction("Delete")
+    )
+    .Editing(e => e
+        .AllowUpdating(true)
+        .AllowDeleting(true)
+        .AllowAdding(true)
+    )
+    .Columns(columns => {
+        columns.Add().DataField("Code").AllowEditing(false);
+        columns.Add().DataField("CallLetters");
+        columns.Add().DataField("EMail").Caption("Email Address");
+        columns.Add().DataField("FirstName").Caption("First Name");
+        columns.Add().DataField("LastName").Caption("Last Name");
+        columns.Add().DataField("Title");
+    })
+)

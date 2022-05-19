@@ -51,7 +51,7 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseMiddleware<SerilogMiddleware>();
-        app.UseMiddleware<ErrorHandlerMiddleware>();
+        //app.UseMiddleware<ErrorHandlerMiddleware>();
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
