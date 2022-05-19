@@ -40,6 +40,7 @@ namespace Repository.Persistence
         public virtual DbSet<ReplacementReason> ReplacementReasons { get; set; } = null!;
         public virtual DbSet<ReportParm> ReportParms { get; set; } = null!;
         public virtual DbSet<Result> Results { get; set; } = null!;
+        public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<SiteOption> SiteOptions { get; set; } = null!;
         public virtual DbSet<Spot> Spots { get; set; } = null!;
         public virtual DbSet<SpotHistory> SpotHistories { get; set; } = null!;
@@ -51,6 +52,7 @@ namespace Repository.Persistence
         public virtual DbSet<TempSpotWithError> TempSpotWithErrors { get; set; } = null!;
         public virtual DbSet<TmpExportSpot> TmpExportSpots { get; set; } = null!;
         public virtual DbSet<UpdatedSpot> UpdatedSpots { get; set; } = null!;
+        public virtual DbSet<UserAccount> UserAccounts { get; set; } = null!;
         public virtual DbSet<UserActivity> UserActivities { get; set; } = null!;
         public virtual DbSet<VendorServiceController> VendorServiceControllers { get; set; } = null!;
         public virtual DbSet<VwCurSpot> VwCurSpots { get; set; } = null!;
@@ -1433,6 +1435,18 @@ namespace Repository.Persistence
                     .HasMaxLength(10)
                     .IsUnicode(false);
             });
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.ToTable("Role");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+            });
 
             modelBuilder.Entity<SiteOption>(entity =>
             {
@@ -2541,6 +2555,50 @@ namespace Repository.Persistence
                     .HasMaxLength(1)
                     .IsUnicode(false)
                     .IsFixedLength();
+            });
+
+            modelBuilder.Entity<UserAccount>(entity =>
+            {
+                entity.ToTable("UserAccount");
+
+                entity.Property(e => e.CreatedOn)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.LockoutEnd).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedOn)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Otc)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("OTC");
+
+                entity.Property(e => e.OtcexpiresOn)
+                    .HasColumnType("datetime")
+                    .HasColumnName("OTCExpiresOn");
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PasswordHash)
+                    .HasMaxLength(256)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PhoneNumber)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.WebEmtcode).HasColumnName("WebEMTCode");
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.UserAccounts)
+                    .HasForeignKey(d => d.RoleId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_UserAccount_Role");
             });
 
             modelBuilder.Entity<UserActivity>(entity =>
