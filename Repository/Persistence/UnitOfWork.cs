@@ -9,6 +9,7 @@ namespace Repository.Persistence
         private readonly AffWeb_XYZContext _context;
         private readonly IUserActivityRepository? _userActivityRepository;
         private readonly IWebEmtRepository? _webEmtRepository;
+        private readonly IUserAccountRepository? _userAccountRepository;
         private readonly ISpotRepository? _spotRepository;
 
         public UnitOfWork(AffWeb_XYZContext context)
@@ -17,6 +18,7 @@ namespace Repository.Persistence
         }
         public IUserActivityRepository UserActivities { get => _userActivityRepository ?? new UserActivityRepository(_context); }
         public IWebEmtRepository WebEmts { get => _webEmtRepository ?? new WebEmtRepository(_context); }
+        public IUserAccountRepository UserAccounts { get => _userAccountRepository ?? new UserAccountRepository(_context); }
         public ISpotRepository Spots { get => _spotRepository ?? new SpotRepository(_context); }
 
         public void SaveAsync() => _context.SaveChangesAsync();

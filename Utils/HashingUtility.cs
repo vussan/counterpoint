@@ -18,7 +18,7 @@ namespace Utils
             return GetHash(password);
         }
 
-        public static string GetHash(string password)
+        private static string GetHash(string password)
         {
             var crypt = SHA256.Create();
             var hash = new StringBuilder();

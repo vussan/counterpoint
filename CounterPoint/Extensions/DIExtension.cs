@@ -10,6 +10,7 @@ namespace CounterPoint.Extensions
         public static IServiceCollection AddDependency(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IUserActivityService, UserActivityService>();
             services.AddScoped<IWebEmtService, WebEmtService>();
             services.AddScoped<ISpotService, SpotService>();
