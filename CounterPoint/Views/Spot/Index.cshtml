@@ -1,0 +1,28 @@
+﻿@using DevExtreme.AspNet.Mvc
+@model IEnumerable<Repository.Core.Models.Spot>
+
+@(Html.DevExtreme().DataGrid()
+    .ID("gridContainer")
+    .ShowBorders(true)
+    .DataSource(d => d
+        .Mvc()
+        .Controller("Spot")
+        .LoadAction("Get")
+        @*.InsertAction("Add")*@
+        .Key("AstCode")
+    )
+    @*.KeyExpr("AstCode")*@
+    .Columns(columns => {
+        columns.Add().DataField("Advt").Caption("Advt/Prod");
+        columns.Add().DataField("Isci").Caption("ISCI");
+        columns.Add().DataField("C");
+        columns.Add().DataField("SpotLen").Caption("Len");
+        columns.Add().DataField("PledgeStartDate").Caption("Pledge Date");
+        columns.Add().DataField("ActualAirDate").Caption("Pledge Time");
+        columns.Add().DataField("ActualAirTime").Caption("Copy End Date");
+    })
+    .Editing(e => e
+        .AllowUpdating(true)
+        .AllowAdding(true)
+    )
+)

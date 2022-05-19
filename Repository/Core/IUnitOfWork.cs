@@ -6,5 +6,7 @@ namespace Repository.Core
     {
         void SaveAsync();
         IUserActivityRepository UserActivities { get; }
+        IWebEmtRepository WebEmts { get; }
+        ISpotRepository Spots { get; }
     }
 }

@@ -3472,7 +3472,7 @@ namespace Repository.Persistence
 
             modelBuilder.Entity<WebEmt>(entity =>
             {
-                entity.HasNoKey();
+                //entity.HasNoKey();
 
                 entity.ToTable("WebEMT");
 
@@ -3509,6 +3509,7 @@ namespace Repository.Persistence
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(1)
+                    .IsRequired()
                     .IsUnicode(false)
                     .IsFixedLength();
 

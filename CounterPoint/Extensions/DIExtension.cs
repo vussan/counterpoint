@@ -11,6 +11,8 @@ namespace CounterPoint.Extensions
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserActivityService, UserActivityService>();
+            services.AddScoped<IWebEmtService, WebEmtService>();
+            services.AddScoped<ISpotService, SpotService>();
             return services;
         }
     }

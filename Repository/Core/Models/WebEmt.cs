@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Repository.Core.Models
 {
     public partial class WebEmt
     {
+        [Key]
         public int Code { get; set; }
         public string CallLetters { get; set; } = null!;
         public int ShttCode { get; set; }

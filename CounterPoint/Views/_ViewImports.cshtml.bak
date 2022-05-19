@@ -1,0 +1,3 @@
+﻿@using CounterPoint
+@using CounterPoint.ViewModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
