@@ -2,6 +2,7 @@
 using CounterPoint.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -14,6 +15,7 @@ namespace CounterPoint.Controllers
         {
             _accountService = accountService;
         }
+
         public IActionResult Login()
         {
             return View();
@@ -48,7 +50,12 @@ namespace CounterPoint.Controllers
             return View();
         }
 
-        [HttpGet]
+        public IActionResult Register()
+        {
+            return View("Register");
+        }
+
+        [Authorize]
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
