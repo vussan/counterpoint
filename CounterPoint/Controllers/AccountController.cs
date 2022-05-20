@@ -50,11 +50,9 @@ namespace CounterPoint.Controllers
             return View();
         }
 
-        [HttpPost]
-        [Authorize]
         public IActionResult Register()
         {
-            return View();
+            return View("Register");
         }
 
         [Authorize]
