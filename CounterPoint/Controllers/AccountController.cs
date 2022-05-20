@@ -9,10 +9,10 @@ namespace CounterPoint.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IUserActivityService _userActivityService;
-        public AccountController(IUserActivityService userActivityService)
+        private readonly IAccountService _accountService;
+        public AccountController(IAccountService accountService)
         {
-            _userActivityService = userActivityService;
+            _accountService = accountService;
         }
         public IActionResult Login()
         {
@@ -25,12 +25,13 @@ namespace CounterPoint.Controllers
             if (ModelState.IsValid)
                 return View();
 
-            var user = await _userActivityService.AuthenticateUser(model.Username, model.Password);
+            var user = await _accountService.AuthenticateUser(model.Username, model.Password);
             if (user != null)
             {
                 var claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.Name, value: user.UaCallLetters));
-                //claims.Add(new Claim(ClaimTypes.Role, user.RoleId.ToString()));
+                claims.Add(new Claim(ClaimTypes.Name, value: user.WebEmtcode.ToString()));
+                claims.Add(new Claim(ClaimTypes.Role, user.RoleId.ToString()));
+                claims.Add(new Claim(ClaimTypes.Email, user.Email.ToString()));
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
