@@ -1,0 +1,43 @@
+﻿.btn {
+    border-radius: $border-radius;
+
+    &-default {
+        background-color: $warning;
+        border-color: $warning;
+
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: $warning-dark;
+            border-color: $warning-dark;
+        }
+
+        &:disabled {
+            background-color: $warning-light;
+            border-color: $warning-light;
+        }
+    }
+
+    &-primary {
+        /*color: $primary;*/
+        background-color: $primary;
+        border-color: $primary;
+
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: $primary-dark;
+            border-color: $primary-dark;
+        }
+
+        &:disabled {
+            background-color: $primary-light;
+            border-color: $primary-light;
+        }
+    }
+
+    &-light {
+        background-color: #ffffff;
+        border-color: $gray-01;
+    }
+}

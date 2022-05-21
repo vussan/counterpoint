@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CounterPoint</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">*@
+    @*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">*@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="~/css/devextreme/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CounterPoint.styles.css" asp-append-version="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +29,6 @@
     @* Uncomment to use the Diagram control *@
     @*<link href="~/css/devextreme/dx-diagram.css" rel="stylesheet" />*@
 
-    <link href="~/css/devextreme/bootstrap.css" rel="stylesheet" />
 
     <link href="~/css/devextreme/dx.common.css" rel="stylesheet" />
 
@@ -39,8 +41,8 @@
     @* Uncomment to use the Diagram control *@
     @*<script src="~/js/devextreme/dx-diagram.js"></script>*@
 
-    <script src="~/js/devextreme/jquery.js"></script>
-    <script src="~/js/devextreme/bootstrap.js"></script>
+    @*<script src="~/js/devextreme/jquery.js"></script>
+    <script src="~/js/devextreme/bootstrap.js"></script>*@
 
     @* Uncomment to use Globalize for localization *@
     @* Docs: https://docs.devexpress.com/AspNetCore/400577#globalize *@
@@ -57,6 +59,7 @@
     @* Uncomment to enable client-side export *@
     @*<script src="~/js/devextreme/jszip.js"></script>*@
 
+    @*<script src="~/js/devextreme/jquery.js"></script>*@
     <script src="~/js/devextreme/dx.all.js"></script>
 
     @* Uncomment to provide geo-data for the VectorMap control *@
@@ -67,10 +70,12 @@
     <script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>
 </head>
 <body>
-    <header>
+    <header class="csi-header">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CounterPoint</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="csi-header-image" src="~/assets/images/novelty-logo.png">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -85,11 +90,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted fixed-bottom">
+@*    <footer class="border-top footer text-muted fixed-bottom">
         <div class="container">
             &copy; 2022 - CounterPoint - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

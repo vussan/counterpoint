@@ -5,9 +5,22 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <Content Remove="wwwroot\sass\base\_typography.scss" />
+    <Content Remove="wwwroot\sass\components\_forms.scss" />
+    <Content Remove="wwwroot\sass\layout\_footer.scss" />
+    <Content Remove="wwwroot\sass\layout\_header.scss" />
+    <Content Remove="wwwroot\sass\pages\_login.scss" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\sass\base\_typography.scss" />
+    <None Include="wwwroot\sass\components\_forms.scss" />
+    <None Include="wwwroot\sass\layout\_footer.scss" />
+    <None Include="wwwroot\sass\layout\_header.scss" />
+    <None Include="wwwroot\sass\pages\_login.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.SassCompiler" Version="1.52.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
     <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.7.0" />
   </ItemGroup>
@@ -17,5 +30,20 @@
     <ProjectReference Include="..\Utils\Utils.csproj" />
     <PackageReference Include="DevExtreme.AspNet.Core" Version="21.2.7" />
     <PackageReference Include="DevExtreme.AspNet.Data" Version="2.8.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\sass\layout\_header.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\sass\layout\_footer.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\sass\pages\_login.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\sass\base\_typography.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\sass\components\_forms.scss" />
   </ItemGroup>
 </Project>
