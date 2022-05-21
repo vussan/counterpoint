@@ -71,6 +71,12 @@
   border-radius: 32px;
 }
 
+.csi-about {
+  width: 429px;
+}
+.csi-network-name {
+  margin-bottom: 40px;
+}
 .csi-login-header {
   margin-top: 90px;
   margin-bottom: 40px;

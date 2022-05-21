@@ -1,40 +1,50 @@
 ﻿.login-container {
 }
 
-.csi-login {
+.csi {
+    &-about {
+        width: 429px;
+    }
 
-    &-header {
-        margin-top: 90px;
+    &-network-name {
         margin-bottom: 40px;
     }
 
-    &-box {
-        border-radius: 10px;
-        opacity: 1;
-        box-shadow: 0px 2px 31px #77777729;
-        background: white 0% 0% no-repeat padding-box;
-    }
+    &-login {
 
-    &-card {
-        padding: 32px;
-    }
+        &-header {
+            margin-top: 90px;
+            margin-bottom: 40px;
+        }
 
-    &-trouble {
-        margin-top: 40px;
-    }
+        &-box {
+            border-radius: 10px;
+            opacity: 1;
+            box-shadow: 0px 2px 31px #77777729;
+            background: white 0% 0% no-repeat padding-box;
+        }
 
-    &-fp-help {
-    }
+        &-card {
+            padding: 32px;
+        }
 
-    &-powered-by {
-        margin-top: 129px;
-    }
+        &-trouble {
+            margin-top: 40px;
+        }
 
-    &-img {
-        height: 24px;
-    }
+        &-fp-help {
+        }
 
-    &-footer {
-        margin-top: 60px;
+        &-powered-by {
+            margin-top: 129px;
+        }
+
+        &-img {
+            height: 24px;
+        }
+
+        &-footer {
+            margin-top: 60px;
+        }
     }
 }
