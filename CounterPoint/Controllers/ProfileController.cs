@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Repository.Core.Models;
+using Utils;
 
 namespace CounterPoint.Controllers
 {
@@ -27,7 +28,6 @@ namespace CounterPoint.Controllers
         public async Task<ActionResult> Get()
         {
             var profiles = await _webEmtService.GetAll();
-            //return DataSourceLoader.Load(profiles, loadOptions);
             return Content(JsonConvert.SerializeObject(profiles), "application/json");
         }
 
