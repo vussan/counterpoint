@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 
-namespace CounterPoint.Middleware
+namespace CounterPoint.Middlewares
 {
     public class SerilogMiddleware
     {
@@ -22,7 +22,7 @@ namespace CounterPoint.Middleware
             await _next(httpContext);
         }
 
-        private long? GetUserId(HttpContext httpContext)
+        private static long? GetUserId(HttpContext httpContext)
         {
             var claim = httpContext?.User as ClaimsPrincipal;
             var userId = claim.FindFirst("uid");
@@ -31,7 +31,7 @@ namespace CounterPoint.Middleware
             else
                 return long.Parse(userId.Value);
         }
-        private async Task<string> GetRequestBody(HttpContext httpContext)
+        private static async Task<string> GetRequestBody(HttpContext httpContext)
         {
             HttpRequestRewindExtensions.EnableBuffering(httpContext.Request);
             Stream body = httpContext.Request.Body;

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Utils
 {
-    public class HashingUtility
+    public class HashUtility
     {
         public static string ComputeHash(string plaintext, string salt)
         {

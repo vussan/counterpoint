@@ -1,5 +1,5 @@
 using CounterPoint.Extensions;
-using CounterPoint.Middleware;
+using CounterPoint.Middlewares;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Repository.Persistence;
@@ -35,6 +35,7 @@ public class Program
         // Add services to the container.
         builder.Services.AddDbContext<AffWeb_XYZContext>(x => x.UseSqlServer(Config.ConnectionString));
         builder.Services.AddDependency();
+        builder.Services.AddAutoMapper(typeof(Program));
         builder.Services.AddControllersWithViews();
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Net;
 using System.Text.Json;
 
-namespace CounterPoint.Middleware
+namespace CounterPoint.Middlewares
 {
     public class ErrorHandlerMiddleware
     {
