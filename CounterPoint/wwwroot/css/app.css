@@ -55,6 +55,16 @@
   opacity: 1;
 }
 
+.csi-nav-list {
+  height: 72px;
+  color: #6C757D !important;
+}
+.csi-nav-list.active {
+  background-color: #E9ECEF;
+}
+.csi-nav-list.active > a {
+  color: #bf8b59 !important;
+}
 .csi-nav-items {
   opacity: 1;
 }
