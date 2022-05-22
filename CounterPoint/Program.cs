@@ -39,6 +39,10 @@ public class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
+        #if DEBUG
+            builder.Services.AddSassCompiler();
+        #endif
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

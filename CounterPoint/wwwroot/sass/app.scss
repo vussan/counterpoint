@@ -1,0 +1,15 @@
+﻿@import "abstracts/_customVariable.scss";
+
+// components
+@import "components/_buttons.scss";
+@import "components/_forms.scss";
+
+// layouts
+@import "layout/_header.scss";
+@import "layout/_footer.scss";
+
+// pages
+@import "pages/_login.scss";
+
+// typography
+@import "base/_typography.scss";

@@ -1,71 +1,62 @@
 ﻿@model CounterPoint.ViewModels.LoginViewModel
 
-@*<h1>Login</h1>
-<form asp-controller="Account" asp-action="Login"
-method="post">
-    <table>
-        <tr>
-            <td><label asp-for="Username"></label></td>
-            <td><input asp-for="Username" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Password"></label></td>
-            <td><input asp-for="Password" type="password" /></td>
-        </tr>
+<div class="row">
+    <div class="col-md-6 offset-md-6">
+        <h3 class="text-center csi-login-header">User Login</h3>
+    </div>
+</div>
 
-        <tr>
-            <td colspan="2">
-                <input type="submit"
-                       value="Login" />
-            </td>
-        </tr>
-    </table>
-    <div asp-validation-summary="All"></div>
-
-    <br />
-    <div>@ViewData["message"]</div>
-
-    <h3><a asp-controller="Account" asp-action="Register">
-Create a user</a></h3>
-
-</form>*@
-
-<form method="post" asp-controller="Account" asp-action="Login">
-    <div class="row justify-content-center">
-        <div class="col-sm-4">
-            <div class="card">
-                <article class="card-body">
-                    <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
-                            <input asp-for="Username" class="form-control" placeholder="Email or login" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                            </div>
-                            <input asp-for="Password" class="form-control" placeholder="******" type="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block"> Login  </button>
-                    </div>
-                    <div class="form-group">
-                        <div>@ViewData["message"]</div>
-                    </div>
-                    @*<p class="text-center"><a href="#" class="btn">Forgot password?</a></p>*@
-                    <h5>
-                        <a asp-controller="Account" asp-action="Register">
-                            Create a user
-                        </a>
-                    </h5>
-                </article>
-            </div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="d-flex flex-column align-items-center m-auto">
+            <h1 class="mb-3">Welcome to</h1>
+            <h5 class="csi-network-name">Network Name 1</h5>
+            <p class="text-center csi-about">We’ve updated our CSI Electronic Affidavit System, Use the login form at the right to see it in action. It’s FAST | RELIABLE | EFFICIENT.</p>
         </div>
     </div>
-</form>
+    <div class="col-md-6">
+        <form method="post" asp-controller="Account" asp-action="Login">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="card csi-login-box">
+                        <article class="card-body csi-login-card">
+                            <p>Please log in using affiliated station username.</p>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input asp-for="Username" class="form-control" placeholder="Email or login" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input asp-for="Password" class="form-control" placeholder="******" type="password">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="remember-me"> Remember me
+                                </label>
+                            </div>
+                            <div class="form-group mb-0">
+                                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="csi-login-trouble">
+                        <p class="font-weight-bold text-center">Having trouble logging in?</p>
+                    </div>
+                    <div class="d-flex justify-content-between csi-login-fp-help">
+                        <button class="btn btn-light"><i class="fa fa-lock"></i> Forgot password?</button>
+                        <button class="btn btn-light"><i class="fa fa-circle-question"></i> Help me sign on</button>
+                    </div>
+                    <div class="d-flex flex-column align-items-center csi-login-powered-by">
+                        <p class="mb-2">Powered by</p>
+                        <img class="csi-login-img" src="~/assets/images/logo.jpg">
+                    </div>
+                    <div class="csi-login-footer">
+                        <p class="font-weight-small">Copyright &copy; 2022 | Privacy statement | Terms of use | All policies and guidelines</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

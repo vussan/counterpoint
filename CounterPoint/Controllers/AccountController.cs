@@ -40,7 +40,9 @@ namespace CounterPoint.Controllers
                 var props = new AuthenticationProperties();
                 //props.IsPersistent = model.RememberMe;
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props);
-                return RedirectToAction("Index", "Home");
+                //return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Profile");
+
             }
             else
             {
