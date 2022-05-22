@@ -25,7 +25,7 @@ namespace Business.Services
             if (user == null)
                 return null;
 
-            var hashedPassword = HashingUtility.ComputeHash(password, user.Password);
+            var hashedPassword = HashUtility.ComputeHash(password, user.Password);
             if (hashedPassword.ToLower() == user.PasswordHash.ToLower())
                 return new AccountDTO()
                 {
