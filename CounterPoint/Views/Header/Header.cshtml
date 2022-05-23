@@ -2,9 +2,9 @@
 {
     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
         <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item">
+            @*<li class="nav-item">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            </li>
+            </li>*@
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Profile</a>
             </li>
@@ -22,14 +22,27 @@
 }
 else
 {
-    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
-        <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Sign In</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
-            </li>
-        </ul>
+    <div class="form-inline my-2 my-lg-0">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        US English
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Choose Language</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">US English</a>
+                        <a class="dropdown-item" href="#">Spanish</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <i class="fa fa-circle-question info-dark"></i>
+                </li>
+            </ul>
+        </div>
     </div>
 }
