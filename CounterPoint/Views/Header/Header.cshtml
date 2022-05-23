@@ -2,26 +2,26 @@
 {
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav bd-navbar-nav flex-row">
-            <li class="nav-item csi-nav-list active">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-house-door-fill"></i>
-                    <p>Dashboard</p>
-                </a>
-            </li>
             <li class="nav-item csi-nav-list">
                 <a class="nav-link" href="#">
+                    <i class="bi bi-house-door-fill"></i>
+                    <p>DASHBOARD</p>
+                </a>
+            </li>
+            <li class="nav-item csi-nav-list active">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
                     <i class="bi bi-people-fill"></i>
-                    <p>Personnel</p>
+                    <p>PERSONNEL</p>
                 </a>
             </li>
         </ul>
     </div>
     <ul class="navbar-nav flex align-items-center">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 US English
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu-end">
                 <a class="dropdown-item" href="#">Choose Language</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">US English</a>
@@ -32,10 +32,10 @@
             <i class="bi bi-question-circle-fill text-info-dark"></i>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="userInfoDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 XXXX-FM
             </a>
-            <div class="dropdown-menu" aria-labelledby="userInfoDropdown">
+            <div class="dropdown-menu dropdown-menu-end" >
                 <a class="dropdown-item" href="#">Hello, Novelty Technology</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Settings</a>

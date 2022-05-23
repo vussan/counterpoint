@@ -40,9 +40,9 @@
         background-color: #ffffff;
         border-color: $gray-01;
 
-        &:active,
-        &:hover,
-        &:focus {
+        font-weight: $headings-font-weight;
+
+         &:active, &:hover, &:focus {
             background-color: $white;
             border-color: $gray-01;
         }

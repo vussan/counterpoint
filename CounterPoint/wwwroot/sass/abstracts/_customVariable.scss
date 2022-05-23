@@ -1,7 +1,8 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Raleway:wght@400;700&display=swap');
 
 $font-family-base: 'Raleway', sans-serif;
 $headings-font-family: "Montserrat", Arial, sans-serif;
+$headings-font-weight: 600;
 $border-radius: .25rem;
 
 $white: #FFFFFF;
@@ -42,8 +43,9 @@ $error-light: #FFDBDB;
 // texts
 $font-size-root: null;
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
-$font-size-sm: $font-size-base * .75;
-$font-size-lg: $font-size-base * 1.25;
+$small-font-size: $font-size-base * .75;
+$large-font-size: $font-size-base * 1.25;
+
 
 $line-height-base: 1.5;
 $line-height-sm: 1.25;
