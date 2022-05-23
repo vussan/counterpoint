@@ -12,13 +12,7 @@ namespace Business.Services
         {
             _uow = uow;
         }
-        public void Add(WebEmt webEmt)
-        {
-            webEmt.Code = _uow.WebEmts.RecordCount() + 1;
-            _uow.WebEmts.Add(webEmt);
-            _uow.SaveAsync();
-        }
-
+        
         public async Task<IEnumerable<WebEmt>> GetAll()
         {
             return await _uow.WebEmts.GetAll();
@@ -29,9 +23,16 @@ namespace Business.Services
             return await _uow.WebEmts.Get(x => x.Code == id);
         }
 
-        public void Remove(WebEmt webEmt)
+        public async Task<WebEmt> GetByEmail(string email)
         {
-            _uow.WebEmts.Remove(webEmt);
+            return await _uow.WebEmts.Get(x => x.Email == email);
+        }
+
+        public void Add(WebEmt webEmt)
+        {
+            webEmt.Status = "";
+            webEmt.Code = _uow.WebEmts.MaxValue() + 1;
+            _uow.WebEmts.Add(webEmt);
             _uow.SaveAsync();
         }
 
@@ -40,5 +41,13 @@ namespace Business.Services
             _uow.WebEmts.Update(webEmt);
             _uow.SaveAsync();
         }
+
+        public void Remove(WebEmt webEmt)
+        {
+            _uow.WebEmts.Remove(webEmt);
+            _uow.SaveAsync();
+        }
+
+        
     }
 }

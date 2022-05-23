@@ -20,8 +20,8 @@
     <None Include="wwwroot\sass\pages\_login.scss" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AspNetCore.SassCompiler" Version="1.52.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-    <PackageReference Include="AspNetCore.SassCompiler" Version="1.52.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
     <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.7.0" />
   </ItemGroup>

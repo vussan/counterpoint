@@ -29,6 +29,36 @@ namespace Utils
             smtp.Send(emailDetails);
             smtp.Disconnect(true);
         }
+
+        public static void SendMail(Email email)
+        {
+            var smtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587)
+            {
+                UseDefaultCredentials = false, // uncomment if you don't want to use the network credentials
+                Credentials = new System.Net.NetworkCredential(Config.EmailUsername, Config.EmailPassword),
+                EnableSsl = true
+                //DeliveryMethod = SmtpDeliveryMethod.Network;
+            };
+
+            System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage
+            {
+                From = new System.Net.Mail.MailAddress(Config.EmailUsername, "noreply@counterpoint.com"),
+                Subject = email.Subject,
+                Body = email.Body,
+                IsBodyHtml = true
+            };
+            mail.To.Add(new System.Net.Mail.MailAddress(email.Destinations[0]));
+
+            //var contentType = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Application.Pdf);
+            //foreach (var attachment in email.Attachments)
+            //{
+            //    Attachment attach = new Attachment(attachment.Stream, contentType);
+            //    attach.ContentDisposition.FileName = attachment.Name;
+            //    mail.Attachments.Add(attach);
+            //}
+
+            smtpClient.Send(mail);
+        }
     }
 
     public class Email
