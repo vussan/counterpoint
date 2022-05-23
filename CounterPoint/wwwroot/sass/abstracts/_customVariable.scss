@@ -1,4 +1,8 @@
-﻿$border-radius: .25rem;
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway&display=swap');
+
+$font-family-base: 'Raleway', sans-serif;
+$headings-font-family: "Montserrat", Arial, sans-serif;
+$border-radius: .25rem;
 
 $white: #FFFFFF;
 $white-01: #E9ECEF;
@@ -12,14 +16,42 @@ $gray: #6C757D;
 $gray-01: #ADB5BD;
 
 $default: #d99f67;
+
 $primary: #bf8b59;
 $primary-dark: #D99F67;
 $primary-light: #FFDBB9; 
+
 $neutral: #343a40;
+
 $success: #29d672;
+$success-dark: #11A04E;
+$success-light: #D6F7E4;
+
 $warning: #E2B93B;
 $warning-dark: #BF9514;
 $warning-light: #FFF0C4;
+
 $info: #308ABF;
 $info-dark: #116A9F;
+$info-light: #BFE7FF;
+
 $error: #EB5757;
+$error-dark: #D6F7E4;
+$error-light: #FFDBDB;
+
+// texts
+$font-size-root: null;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * .75;
+$font-size-lg: $font-size-base * 1.25;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;

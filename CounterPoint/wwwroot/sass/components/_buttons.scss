@@ -39,5 +39,12 @@
     &-light {
         background-color: #ffffff;
         border-color: $gray-01;
+
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: $white;
+            border-color: $gray-01;
+        }
     }
 }

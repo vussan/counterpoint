@@ -11,5 +11,7 @@
 // pages
 @import "pages/_login.scss";
 
-// typography
+// base
+@import "base/_base.scss";
+@import "base/_utility.scss";
 @import "base/_typography.scss";

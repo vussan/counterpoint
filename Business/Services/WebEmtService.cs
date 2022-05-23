@@ -15,6 +15,7 @@ namespace Business.Services
         public void Add(WebEmt webEmt)
         {
             webEmt.Code = _uow.WebEmts.RecordCount() + 1;
+            webEmt.Status = "";
             _uow.WebEmts.Add(webEmt);
             _uow.SaveAsync();
         }

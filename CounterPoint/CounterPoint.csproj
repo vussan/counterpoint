@@ -5,7 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\sass\base\_base.scss" />
     <Content Remove="wwwroot\sass\base\_typography.scss" />
+    <Content Remove="wwwroot\sass\base\_utility.scss" />
     <Content Remove="wwwroot\sass\components\_forms.scss" />
     <Content Remove="wwwroot\sass\layout\_footer.scss" />
     <Content Remove="wwwroot\sass\layout\_header.scss" />
@@ -13,7 +15,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\sass\base\_base.scss" />
     <None Include="wwwroot\sass\base\_typography.scss" />
+    <None Include="wwwroot\sass\base\_utility.scss" />
     <None Include="wwwroot\sass\components\_forms.scss" />
     <None Include="wwwroot\sass\layout\_footer.scss" />
     <None Include="wwwroot\sass\layout\_header.scss" />
@@ -46,5 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <UpToDateCheckInput Remove="wwwroot\sass\components\_forms.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\sass\base\_base.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\sass\base\_utility.scss" />
   </ItemGroup>
 </Project>

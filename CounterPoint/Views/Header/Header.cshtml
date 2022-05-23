@@ -1,6 +1,51 @@
 ﻿@if (User.Identity.IsAuthenticated)
 {
-    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item csi-nav-list active">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-house-door-fill"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="nav-item csi-nav-list">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-people-fill"></i>
+                    <p>Personnel</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <ul class="navbar-nav flex align-items-center">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                US English
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Choose Language</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">US English</a>
+                <a class="dropdown-item" href="#">Spanish</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <i class="bi bi-question-circle-fill text-info-dark"></i>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userInfoDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                XXXX-FM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userInfoDropdown">
+                <a class="dropdown-item" href="#">Hello, Novelty Technology</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="#">Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Logout &nbsp;<i class="bi bi-box-arrow-right"></i></a>
+            </div>
+        </li>
+    </ul>
+    @*<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
         <ul class="navbar-nav flex-grow-1">
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Profile</a>
@@ -15,11 +60,11 @@
     </div>
     <div>
         <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
-    </div>
+    </div>*@
 }
 else
 {
-    <div class="navbar-nav-scroll">
+    @*    <div class="navbar-nav-scroll">
         <ul class="navbar-nav bd-navbar-nav flex-row">
             <li class="nav-item csi-nav-list active">
                 <a class="nav-link" href="#">
@@ -34,7 +79,7 @@ else
                 </a>
             </li>
         </ul>
-    </div>
+    </div>*@
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">

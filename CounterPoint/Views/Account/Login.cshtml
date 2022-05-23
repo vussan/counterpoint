@@ -21,23 +21,21 @@
                     <div class="card csi-login-box">
                         <article class="card-body csi-login-card">
                             <p>Please log in using affiliated station username.</p>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input asp-for="Username" class="form-control" placeholder="Email or login" type="text">
-                                </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Username" class="form-control" placeholder="Email or login" type="text">
+                                <label for="Username">Email address</label>
                             </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input asp-for="Password" class="form-control" placeholder="******" type="password">
-                                </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Password" class="form-control" placeholder="******" type="password">
+                                <label for="Password">Password</label>
                             </div>
-                            <div class="checkbox">
+                            <div class="checkbox mb-2">
                                 <label>
                                     <input type="checkbox" value="remember-me"> Remember me
                                 </label>
                             </div>
-                            <div class="form-group mb-0">
-                                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary"> Login  </button>
                             </div>
                         </article>
                     </div>
@@ -45,8 +43,8 @@
                         <p class="font-weight-bold text-center">Having trouble logging in?</p>
                     </div>
                     <div class="d-flex justify-content-between csi-login-fp-help">
-                        <button class="btn btn-light"><i class="fa fa-lock"></i> Forgot password?</button>
-                        <button class="btn btn-light"><i class="fa fa-circle-question"></i> Help me sign on</button>
+                        <button class="btn btn-light"><i class="bi bi-lock-fill"></i> Forgot password?</button>
+                        <button class="btn btn-light"><i class="bi bi-question-circle-fill"></i> Help me sign on</button>
                     </div>
                     <div class="d-flex flex-column align-items-center csi-login-powered-by">
                         <p class="mb-2">Powered by</p>
