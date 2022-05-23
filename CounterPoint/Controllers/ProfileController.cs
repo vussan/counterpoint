@@ -7,57 +7,68 @@ using Utils;
 
 namespace CounterPoint.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly IWebEmtService _webEmtService;
-
         public ProfileController(IWebEmtService webEmtService)
         {
             _webEmtService = webEmtService;
         }
 
-        [Authorize]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var profiles = _webEmtService.GetAll().Result;
+            var profiles = await _webEmtService.GetAll();
             return View(profiles);
         }
 
         [HttpGet]
-        [Authorize]
-        public async Task<ActionResult> Get()
+        public async Task<IActionResult> Get()
         {
             var profiles = await _webEmtService.GetAll();
             return Content(JsonConvert.SerializeObject(profiles), "application/json");
         }
 
         [HttpPost]
-        [Authorize]
-        public ActionResult Add(string values)
+        public IActionResult Add(string values)
         {
             var webEmt = new WebEmt();
             JsonConvert.PopulateObject(values, webEmt);
-
+            if (_webEmtService.GetByEmail(webEmt.Email).Result != null)
+            {
+                ViewData["Message"] = "Email already Exists";
+                return View("Index");
+            }
             _webEmtService.Add(webEmt);
 
+            var code = EncryptionUtility.Encrypt(webEmt.Code.ToString());
+            var link = $"{Config.Domain}Account/SetPassword/{code}";
+            var email = new Email
+            {
+                Subject = "Account Activation",
+                Destinations = new List<string>() { webEmt.Email },
+                Body = $"Hello <b>{webEmt.FirstName} {webEmt.LastName}</b>,"
+            };
+            email.Body += "<br/>Click the link below to verify your account and set the password.";
+            email.Body += $"<br/><b><a href='{link}'><b>Verify Account</b></a>";
+            email.Body += "<br/><br/><small><i>This email was sent by the CSI Electronic Affidavit System. If you have not made this request, please ignore this email.</i></small>";
+
+            MailUtility.SendMail(email);
             return View("Index");
         }
 
         [HttpPut]
-        [Authorize]
-        public async Task<ActionResult> Update(int key, string values)
+        public async Task<IActionResult> Update(int key, string values)
         {
             var profile = await _webEmtService.GetById(key);
             JsonConvert.PopulateObject(values, profile);
 
             _webEmtService.Update(profile);
-
             return View("Index");
         }
 
         [HttpDelete]
-        [Authorize]
-        public async Task<ActionResult> Delete(int key)
+        public async Task<IActionResult> Delete(int key)
         {
             var profile = await _webEmtService.GetById(key);
 

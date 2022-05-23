@@ -4,6 +4,6 @@ namespace Repository.Core.IRepositories
 {
     public interface IWebEmtRepository : IRepository<WebEmt>
     {
-        int RecordCount();
+        int MaxValue();
     }
 }

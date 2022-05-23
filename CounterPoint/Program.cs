@@ -40,7 +40,7 @@ public class Program
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
         #if DEBUG
-            builder.Services.AddSassCompiler();
+            //builder.Services.AddSassCompiler();
         #endif
 
         var app = builder.Build();

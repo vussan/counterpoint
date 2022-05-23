@@ -6,6 +6,8 @@ namespace Business.Abstract
     {
         Task<IEnumerable<WebEmt>> GetAll();
         Task<WebEmt> GetById(int id);
+        Task<WebEmt> GetByEmail(string email);
+
         void Add(WebEmt webEmt);
         void Update(WebEmt webEmt);
 

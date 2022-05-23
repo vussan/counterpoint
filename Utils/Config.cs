@@ -17,6 +17,8 @@ namespace Utils
         }
 
         public static string ConnectionString { get { return _config.GetConnectionString("Default"); } }
+        public static string SecretKey { get { return _config.GetSection("SecretKey").Value; } }
+        public static string Domain { get { return _config.GetSection("Domain").Value; } }
         public static string EmailServer { get { return _config.GetSection("EmailConfig:Server").Value; } }
         public static int EmailPort { get { return int.Parse(_config.GetSection("EmailConfig:SmtpPort").Value); } }
         public static string EmailUsername { get { return _config.GetSection("EmailConfig:Username").Value; } }
