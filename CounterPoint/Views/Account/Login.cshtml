@@ -37,6 +37,13 @@
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary"> Login  </button>
                             </div>
+                            @if (@ViewData["Message"] != null)
+                            {
+                                <div class="text-danger">
+                                    @ViewData["Message"]
+                                </div>
+                            }
+                            
                         </article>
                     </div>
                     <div class="csi-login-trouble">

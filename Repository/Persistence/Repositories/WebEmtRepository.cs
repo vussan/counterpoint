@@ -16,9 +16,9 @@ namespace Repository.Persistence.Repositories
             _context = context;
         }
 
-        public int RecordCount()
+        public int MaxValue()
         {
-            return _context.WebEmts.Count();
+            return _context.WebEmts.Max(x=>x.Code);
         }
     }
 }

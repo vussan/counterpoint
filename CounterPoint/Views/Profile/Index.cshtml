@@ -15,6 +15,7 @@
         .Mvc()
         .Controller("Profile")
         .Key("Code")
+        .InsertAction("Add")
         .LoadAction("Get")
         .InsertAction("Add")
         .UpdateAction("Update")
@@ -34,3 +35,10 @@
         columns.Add().DataField("Title");
     })
 )
+
+@if (@ViewData["Message"] != null)
+{
+    <div class="text-danger">
+        @ViewData["Message"]
+    </div>
+}
