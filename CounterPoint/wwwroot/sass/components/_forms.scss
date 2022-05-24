@@ -1,10 +1,23 @@
 ﻿.form-group {
-
 }
 
 .form-control {
     background: $white 0% 0% no-repeat padding-box;
     border: 1px solid $gray-01;
     border-radius: 3px;
+    color: $gray-01;
     opacity: 1;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $black;
+        border: 1px solid $primary;
+        box-shadow: none;
+    }
+}
+
+.form-floating > .form-control:-webkit-autofill ~ label {
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-1.8rem) translateX(0.15rem);
 }

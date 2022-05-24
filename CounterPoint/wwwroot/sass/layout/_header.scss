@@ -15,20 +15,37 @@
     opacity: 1;
 }
 
-.csi-nav-items {
-    opacity: 1;
+.csi-nav {
 
-    &-language {
-        top: 20px;
-        width: 130px;
-        height: 32px;
+    &-list {
+        height: 72px;
+        text-align: center;
+        color: $gray !important;
+
+        &.active {
+            background-color: $white-01;
+
+            & > a {
+                color: $primary !important;
+            }
+        }
     }
 
-    &-help {
-        top: 16px;
-        width: 40px;
-        height: 40px;
-        background: $info-dark 0% 0% no-repeat padding-box;
-        border-radius: 32px;
+    &-items {
+        opacity: 1;
+
+        &-language {
+            top: 20px;
+            width: 130px;
+            height: 32px;
+        }
+
+        &-help {
+            top: 16px;
+            width: 40px;
+            height: 40px;
+            background: $info-dark 0% 0% no-repeat padding-box;
+            border-radius: 32px;
+        }
     }
 }

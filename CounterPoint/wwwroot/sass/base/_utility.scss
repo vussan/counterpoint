@@ -1,0 +1,99 @@
+﻿.text {
+    &-success {
+        color: $success !important;
+
+        &-dark {
+            color: $success-dark !important;
+        }
+
+        &-light {
+            color: $success-light !important;
+        }
+    }
+
+    &-error {
+        color: $error !important;
+
+        &-dark {
+            color: $error -dark !important;
+        }
+
+        &-light {
+            color: $error -light !important;
+        }
+    }
+
+    &-warning {
+        color: $warning !important;
+
+        &-dark {
+            color: $warning-dark !important;
+        }
+
+        &-light {
+            color: $warning-light !important;
+        }
+    }
+
+    &-info {
+        color: $info !important;
+
+        &-dark {
+            color: $info-dark !important;
+        }
+
+        &-light {
+            color: $info-light !important;
+        }
+    }
+}
+
+.bg {
+    &-success {
+        background-color: $success !important;
+
+        &-dark {
+            background-color: $success-dark !important;
+        }
+
+        &-light {
+            background-color: $success-light !important;
+        }
+    }
+
+    &-error {
+        background-color: $error !important;
+
+        &-dark {
+            background-color: $error -dark !important;
+        }
+
+        &-light {
+            background-color: $error -light !important;
+        }
+    }
+
+    &-warning {
+        background-color: $warning !important;
+
+        &-dark {
+            background-color: $warning-dark !important;
+        }
+
+        &-light {
+            background-color: $warning-light !important;
+        }
+    }
+
+    &-info {
+        background-color: $info !important;
+
+        &-dark {
+            background-color: $info-dark !important;
+        }
+
+        &-light {
+            background-color: $info-light !important;
+        }
+    }
+}

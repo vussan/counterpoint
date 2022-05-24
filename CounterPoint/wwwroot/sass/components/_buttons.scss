@@ -1,5 +1,6 @@
 ﻿.btn {
     border-radius: $border-radius;
+    color: $white;
 
     &-default {
         background-color: $warning;
@@ -39,5 +40,12 @@
     &-light {
         background-color: #ffffff;
         border-color: $gray-01;
+
+        font-weight: $headings-font-weight;
+
+         &:active, &:hover, &:focus {
+            background-color: $white;
+            border-color: $gray-01;
+        }
     }
 }

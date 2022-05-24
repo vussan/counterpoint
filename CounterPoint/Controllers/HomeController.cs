@@ -16,8 +16,14 @@ namespace CounterPoint.Controllers
 
         public IActionResult Index()
         {
-            //return View();
-            return RedirectToAction("Login", "Account");
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Profile");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         [Authorize]
